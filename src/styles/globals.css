@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Styles ── */
+body {
+  @apply bg-[#F8FBFF] text-slate-900 antialiased;
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Prose link styling ── */
+.prose a {
+  @apply text-primary-600 dark:text-primary-400 no-underline hover:underline;
+}
+
+/* ── Prism.js 代码高亮 (VS Code Dark Theme) ── */
+pre[class*='language-'] {
+  @apply rounded-xl my-6 p-5 text-sm overflow-x-auto border border-slate-700;
+  background: #1e1e1e !important;
+}
+
+code[class*='language-'] {
+  color: #d4d4d4;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  font-size: 0.875em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a9955;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #569cd6;
+}
+
+.token.function,
+.token.class-name {
+  color: #dcdcaa;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #9cdcfe;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  @apply rounded-md px-1.5 py-0.5 text-sm;
+  background: #1e1e1e;
+  color: #ce9178;
+}
